@@ -1,1 +1,776 @@
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YSNAEP | Zorbalık Hakkında Bilinçlen</title>
+
+<meta name="description"
+content="YSNAEP, zorbalığın farklı türleri hakkında bilgilendirici ve farkındalık oluşturan bir platformdur.">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f9ff;
+    color:#12304d;
+}
+
+header{
+    background:linear-gradient(135deg,#031b3d,#075dcc,#12a9e8);
+    color:white;
+    min-height:650px;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.96);
+    box-shadow:0 2px 15px #0002;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:17px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    color:#0875df;
+}
+
+.logo span{
+    color:#062c59;
+}
+
+nav a{
+    text-decoration:none;
+    color:#163d63;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:#0875df;
+}
+
+.hero{
+    max-width:1150px;
+    margin:auto;
+    padding:110px 20px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:30px;
+    background:#ffffff22;
+    border:1px solid #ffffff55;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,75px);
+    line-height:1.05;
+    margin:25px 0;
+}
+
+.hero p{
+    max-width:700px;
+    font-size:19px;
+    line-height:1.7;
+    color:#e8f6ff;
+}
+
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 22px;
+    border-radius:12px;
+    background:white;
+    color:#0759b8;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.title{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 45px;
+}
+
+.title small{
+    color:#0875df;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.title h2{
+    font-size:40px;
+    margin:10px 0;
+    color:#06264c;
+}
+
+.title p{
+    color:#61758b;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid #d8ebfa;
+    box-shadow:0 10px 30px #006bd012;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#e5f3ff;
+    font-size:26px;
+}
+
+.card h3{
+    margin:16px 0 8px;
+    color:#08477f;
+}
+
+.card p{
+    color:#647b90;
+    line-height:1.6;
+}
+
+.blue-section{
+    max-width:none;
+    background:linear-gradient(135deg,#e7f5ff,#d5edff);
+}
+
+.blue-section > *{
+    max-width:1150px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.steps{
+    max-width:850px;
+    margin:auto;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    margin:12px 0;
+    border-radius:16px;
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+    border:1px solid #d8ebfa;
+}
+
+.number{
+    min-width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#0875df;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.help{
+    background:linear-gradient(135deg,#05234a,#0875df);
+    color:white;
+    border-radius:25px;
+    padding:50px 25px;
+    text-align:center;
+}
+
+.help h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.help p{
+    max-width:750px;
+    margin:auto;
+    color:#e7f5ff;
+}
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:white;
+    border:1px solid #d8ebfa;
+    border-radius:15px;
+    padding:18px;
+    margin:10px 0;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+    color:#08477f;
+}
+
+details p{
+    margin-top:12px;
+    color:#60778c;
+}
+
+footer{
+    background:#03172e;
+    color:#bcd8ef;
+    padding:40px 20px;
+}
+
+.footer{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+footer strong{
+    color:white;
+    font-size:22px;
+}
+
+@media(max-width:800px){
+
+    nav a{
+        margin-left:8px;
+        font-size:12px;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero{
+        padding:80px 20px;
+    }
+}
+
+@media(max-width:550px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .title h2{
+        font-size:31px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav">
+
+<div class="logo">
+YSNAEP<span>.</span>
+</div>
+
+<div>
+<a href="#zorbalik">Zorbalık</a>
+<a href="#etkileri">Etkileri</a>
+<a href="#destek">Destek</a>
+<a href="#sss">SSS</a>
+</div>
+
+</div>
+</nav>
+
+
+<header>
+
+<div class="hero">
+
+<span class="badge">
+BİLİNÇLEN • DESTEK OL • YALNIZ KALMA
+</span>
+
+<h1>
+Zorbalığı tanı.<br>
+Sesini duyur.
+</h1>
+
+<p>
+YSNAEP, zorbalığın farklı biçimleri hakkında
+bilgi edinmek, zorbalığı fark etmek ve güvenli
+destek yollarını öğrenmek için hazırlanmış
+bilgilendirici bir platformdur.
+</p>
+
+<a class="button" href="#zorbalik">
+Zorbalık Türlerini Keşfet →
+</a>
+
+</div>
+
+</header>
+
+
+<section id="zorbalik">
+
+<div class="title">
+
+<small>ZORBALIĞI TANI</small>
+
+<h2>Zorbalığın farklı yüzleri</h2>
+
+<p>
+Zorbalık farklı şekillerde ortaya çıkabilir.
+Önemli olan davranışı fark etmek ve gerektiğinde
+güvenilir bir yetişkinden destek almaktır.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🧍</div>
+<h3>Fiziksel Zorbalık</h3>
+<p>
+Vurma, itme veya bir kişinin eşyalarına
+zarar verme gibi fiziksel davranışlar.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">💬</div>
+<h3>Sözlü Zorbalık</h3>
+<p>
+Hakaret etme, sürekli alay etme,
+küçük düşürme veya tehdit edici sözler.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">👥</div>
+<h3>Sosyal Zorbalık</h3>
+<p>
+Bir kişiyi bilerek dışlama, arkadaş grubundan
+uzaklaştırma veya söylenti yayma.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Siber Zorbalık</h3>
+<p>
+İnternet, sosyal medya, mesajlaşma
+uygulamaları veya diğer dijital platformlarda
+yapılan zorbalık.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🎮</div>
+<h3>Oyun İçi Zorbalık</h3>
+<p>
+Çevrimiçi oyunlarda hakaret, hedef gösterme,
+dışlama veya oyuncuları rahatsız etme.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">📸</div>
+<h3>Sosyal Medya Zorbalığı</h3>
+<p>
+Paylaşımlar, yorumlar, mesajlar veya hesaplar
+üzerinden kişiyi hedef alan davranışlar.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🧠</div>
+<h3>Duygusal Zorbalık</h3>
+<p>
+Korkutma, baskı kurma, sürekli küçümseme
+ve kişinin kendisini güvensiz hissetmesine
+neden olan davranışlar.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🏫</div>
+<h3>Okul Zorbalığı</h3>
+<p>
+Okul ortamında veya okul ile bağlantılı
+alanlarda gerçekleşen zorbalık.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Akran Zorbalığı</h3>
+<p>
+Yaşça veya sosyal olarak yakın kişiler
+arasında gerçekleşen hedefleyici davranışlar.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🗣️</div>
+<h3>Dedikodu</h3>
+<p>
+Bir kişiyi küçük düşürmek veya zarar vermek
+amacıyla söylenti yayılması.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">⚖️</div>
+<h3>Ayrımcılıkla Bağlantılı Zorbalık</h3>
+<p>
+Bir kişinin farklı görülen özellikleri üzerinden
+hedef alınması veya dışlanması.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">👨‍👩‍👧</div>
+<h3>Yakın Çevrede Zorlayıcı Davranışlar</h3>
+<p>
+Yakın ilişkilerde tekrarlanan küçük düşürücü,
+baskıcı veya korkutucu davranışlar.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="blue-section" id="etkileri">
+
+<div class="title">
+
+<small>FARKINDALIK</small>
+
+<h2>Zorbalık nasıl etkileyebilir?</h2>
+
+<p>
+Herkes aynı şekilde etkilenmez. Yaşanan durumun
+ciddiye alınması ve destek alınması önemlidir.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Okul Hayatı</h3>
+<p>
+Derse odaklanmakta zorlanma veya okul
+ortamında kendini güvensiz hissetme görülebilir.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">👥</div>
+<h3>Sosyal Hayat</h3>
+<p>
+Arkadaşlardan uzaklaşma veya sosyal
+ortamlardan kaçınma gibi değişiklikler olabilir.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💙</div>
+<h3>Duygular</h3>
+<p>
+Üzüntü, kaygı, öfke veya özgüvende azalma
+gibi duygusal etkiler ortaya çıkabilir.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="destek">
+
+<div class="title">
+
+<small>DESTEK</small>
+
+<h2>Zorbalıkla karşılaşırsan ne yapabilirsin?</h2>
+
+<p>
+Her şeyi tek başına çözmek zorunda değilsin.
+Güvenliğini önceliklendir.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+<div class="number">1</div>
+<div>
+<strong>Güvendiğin bir yetişkine anlat.</strong>
+<br>
+Öğretmen, aileden biri, okul rehberlik servisi
+veya güvendiğin başka bir yetişkinle konuş.
+</div>
+</div>
+
+
+<div class="step">
+<div class="number">2</div>
+<div>
+<strong>Güvenli bir yere geç.</strong>
+<br>
+Fiziksel tehlike varsa olay yerinden uzaklaş
+ve yardım iste.
+</div>
+</div>
+
+
+<div class="step">
+<div class="number">3</div>
+<div>
+<strong>Siber zorbalıkta bildirme ve engelleme araçlarını kullan.</strong>
+<br>
+Platformun sunduğu güvenlik seçeneklerini
+değerlendir.
+</div>
+</div>
+
+
+<div class="step">
+<div class="number">4</div>
+<div>
+<strong>Yaşananları anlat.</strong>
+<br>
+Olayın ne zaman ve nerede gerçekleştiğini
+güvendiğin bir yetişkine açıklayabilirsin.
+</div>
+</div>
+
+
+<div class="step">
+<div class="number">5</div>
+<div>
+<strong>Bir arkadaşını yalnız bırakma.</strong>
+<br>
+Onu dinleyebilir ve güvenilir bir yetişkinden
+yardım istemesine destek olabilirsin.
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="help">
+
+<h2>Yardım istemek önemlidir.</h2>
+
+<p>
+Zorbalık yaşıyorsan veya başka birinin zorbalığa
+uğradığını düşünüyorsan güvendiğin bir yetişkine
+anlat. Acil bir tehlike varsa bulunduğun yerdeki
+acil yardım hizmetlerinden destek al.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="sss">
+
+<div class="title">
+
+<small>SSS</small>
+
+<h2>Sık Sorulan Sorular</h2>
+
+</div>
+
+
+<div class="faq">
+
+<details>
+
+<summary>
+Her kötü davranış zorbalık mıdır?
+</summary>
+
+<p>
+Hayır. Zorbalık değerlendirilirken davranışın
+niteliği, tekrar etmesi ve taraflar arasındaki
+güç dengesi gibi unsurlar dikkate alınabilir.
+Ancak tek bir olay bile ciddi olabilir ve yardım
+istemek için mutlaka "zorbalık" tanımı koymak
+gerekmez.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Şaka ile zorbalık arasındaki fark nedir?
+</summary>
+
+<p>
+Bir davranış bir kişiyi rahatsız ediyor veya
+küçük düşürüyorsa bunu ciddiye almak gerekir.
+Kişi rahatsız olduğunu belirttiği halde davranışın
+sürmesi özellikle önemlidir.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Siber zorbalıkta ne yapmalıyım?
+</summary>
+
+<p>
+Tartışmayı büyütmeden güvenliğini koru,
+platformun engelleme ve bildirme seçeneklerini
+kullan ve güvendiğin bir yetişkine anlat.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Arkadaşım zorbalığa uğruyorsa ne yapmalıyım?
+</summary>
+
+<p>
+Onu dinleyebilir, yalnız olmadığını hissettirebilir
+ve güvenilir bir yetişkinden yardım istemesine
+destek olabilirsin.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Zorbalık yapan biri değişebilir mi?
+</summary>
+
+<p>
+Davranışlar değişebilir. Bunun için davranışın
+fark edilmesi, sorumluluk alınması ve gerektiğinde
+uygun yetişkin desteği önemlidir.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer">
+
+<div>
+<strong>YSNAEP</strong>
+<br>
+Zorbalık hakkında bilinçlenme platformu.
+</div>
+
+<div>
+www.ysnaep.com.tr
+<br>
+© 2026 YSNAEP
+</div>
+
+</div>
+
+</footer>
+
+</body>
+  </html>
